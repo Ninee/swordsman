@@ -17,6 +17,7 @@ class Observer
     public static function setQrCodeObserver($qrCodeUrl)
     {
         vbot('console')->log('获取二维码链接:' . $qrCodeUrl, '自定义消息');
+        file_put_contents(vbot('config')['path'] . '/qrurl.txt', $qrCodeUrl);
     }
 
     public static function setBeforeMessageObserver()
